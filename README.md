@@ -58,7 +58,7 @@ The command above will connect to the Random Words API to select a random word .
 
 ### Demo <a name="Demo"></a>
 
-A movie showing a sample session for ConstructorWordGuess can be accessed <a href="" target="_blank">here</a>
+A movie showing a sample session for ConstructorWordGuess can be accessed <a href="https://engjoserobles-gmail.tinytake.com/tt/MzcyNjQwNV8xMTM0MDg1NQ" target="_blank">here</a>
 
 **NOTE**: For better viewing, set the movie player to "Full Size". 
 
