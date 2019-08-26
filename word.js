@@ -9,9 +9,11 @@
  *   21-AUG-2019
  */
  
+
 //Import the Letter module
 var letterObject = require ('./letter.js'); 
 
+//The Word object constructor
 var Word = function ( aString, definitions ) { 
     this.letters = []; // Stores the letters in the word as array of "letterObect" objects.
 
@@ -25,6 +27,7 @@ var Word = function ( aString, definitions ) {
 };
 
 
+//Method to get the current value of the secret Word (or underscores for non-guessed letters).
 Word.prototype.getWord = function() {
 
     letterArray = []; // Stores each character from the letterObject in an array.
@@ -36,6 +39,7 @@ Word.prototype.getWord = function() {
     return ( letterArray.join('') ); 
 };
 
+
 //Calls Letter.matchLetter to update the 'guessed' status on the letter.
 //Return true if a hit, false otherwise.
 Word.prototype.matchLetter  = function( aCharacter ) {
@@ -46,6 +50,9 @@ Word.prototype.matchLetter  = function( aCharacter ) {
 
 };
 
+
+// Method to confirm if all letters have been guessed.
+// Needed by the program logic to determine if a game is over.
 Word.prototype.isAllGuessed = function () {
     
     var returnValue =  true; 
@@ -58,12 +65,15 @@ Word.prototype.isAllGuessed = function () {
 };
 
 
+// Method to set all Letter objects to 'guessed' status.
+// Needed to display the secret word at the end of a game. 
 Word.prototype.setAllGuessed = function () {   
     this.letters.forEach ( function ( letterObject, index ) { 
       letterObject.hasBeenGuessed = true;
     });
 };
 
+// Method to determine if a letter is included in the word.
 Word.prototype.hasLetter  = function ( aCharacter ) { 
     var returnValue = false;
     this.letters.forEach( function ( letterObject, index ) {
@@ -73,6 +83,11 @@ Word.prototype.hasLetter  = function ( aCharacter ) {
     });
     return returnValue; 
 };
+
+//Method to show the definition of the word as obtained from the API.
+// Parameter all can be :
+// true : All definitions are returned in an array of strings.
+// false: Only the first definition is returned. 
 
 Word.prototype.showHint = function ( all ) { 
 
@@ -91,4 +106,5 @@ Word.prototype.showHint = function ( all ) {
       }
 }
 
+//Export the Word Obect.
 module.exports = Word;

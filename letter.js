@@ -10,12 +10,13 @@
  *   21-AUG-2019
  */
  
+ //Letter constructor
   var Letter = function ( aCharacter ) { 
      this.theCharacter = aCharacter; 
      this.hasBeenGuessed = false;
-
  }
 
+ //Method called when the object is concatenated to a string
  Letter.prototype.toString = function() { 
      if ( this.hasBeenGuessed ) {
        return ( this.theCharacter ) ; 
@@ -25,10 +26,13 @@
      }
  }
 
+ // Method to update the "hasBeenGuessed" attribute.
  Letter.prototype.matchLetter  = function( aCharacter ) {
      if ( this.theCharacter.toLowerCase() === aCharacter.toLowerCase() ) {
          this.hasBeenGuessed = true;
+         return (true); 
      }
  }
 
+ //Make the Letter object importable by other modules. 
  module.exports = Letter;

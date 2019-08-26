@@ -95,7 +95,7 @@ function promptForLetter ( secretWord ) {
       name: 'userGuess',
       message: "Guess a letter! (? for hint)",
       filter: function(val) {
-        return val.charAt(0);
+        return val.charAt(0)l;
       }
     }
   ];
